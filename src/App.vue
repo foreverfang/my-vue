@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">el-input组件</router-link> |
+      <router-link to="/about">element组件</router-link> |
       <router-link to="/print">nb打印</router-link>
     </div>
     <router-view/>

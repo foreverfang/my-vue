@@ -27,10 +27,14 @@ export default {
       default: ''
     }
   },
+  customOption: 1,
   data() {
     return {
         myvalue: this.value
     }
+  },
+  created(){
+      console.log("customOption:",this.$options.customOption)
   },
   watch: {
       value: function(val){

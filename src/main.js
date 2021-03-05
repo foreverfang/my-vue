@@ -13,9 +13,15 @@ Vue.use(Print);
 
 Vue.config.productionTip = false
 
+// 设置自定义options合并策略
+Vue.config.optionMergeStrategies.customOption = function (parentVal, childVal) {
+    return parentVal ? (parentVal + childVal) : childVal
+}
+
 Vue.use(ElementUI)
 
 new Vue({
+    customOption: 2,
     router,
     render: h => h(App)
 }).$mount('#app')

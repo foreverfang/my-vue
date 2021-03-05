@@ -4,6 +4,7 @@
     <el-button @click="onreset">重置</el-button>
     <el-input v-model="form.input"></el-input>
     <KeywordInput v-model.trim="queryParams.keyword" @enter="searchList"></KeywordInput>
+    <div style="margin-top: 50px"></div>
     <ElCascader></ElCascader>
   </div>
 </template>
@@ -11,6 +12,7 @@
 import KeywordInput from "@/components/keywordInput.vue"
 import ElCascader from "@/components/elCascader.vue"
 export default {
+    customOption: 2,
     data(){
         return {
             queryParams: {
@@ -23,6 +25,7 @@ export default {
     },
     created(){
         // this.form.input = ''
+        // console.log("customOption2:",this.$options.customOption)
     },
     methods: {
         searchList() {

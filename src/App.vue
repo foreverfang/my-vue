@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/home">Home</router-link> |
       <router-link to="/about">element组件</router-link> |
       <router-link to="/print">nb打印</router-link> |
       <router-link to="/test">面试题</router-link>

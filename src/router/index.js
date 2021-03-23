@@ -8,7 +8,8 @@ const routes = [
     {
         path: '/home',
         name: 'Home',
-        component: Home
+        component: Home,
+        props: { name: 'fang' }
     },
     {
         path: '/about',
@@ -29,6 +30,11 @@ const routes = [
         component: () => import('../views/test.vue')
     },
     {
+        path: '/loading',
+        name: 'loading',
+        component: () => import('../views/loading.vue')
+    },
+    {
         path: '/',
         name: 'any',
         redirect: '/test'
@@ -38,5 +44,24 @@ const routes = [
 const router = new VueRouter({
     routes
 })
+
+// const isLogin = function () {
+//     return false
+// }
+
+// // 全局守卫
+// router.beforeEach((to, from, next) => {
+//     if (to.path === '/print') {
+//         if (!isLogin()) {
+//             // 没有登录
+//             next('/home')
+//         } else {
+//             next('/about')
+//         }
+//     } else {
+//         next()
+//     }
+// })
+
 
 export default router

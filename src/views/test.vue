@@ -6,9 +6,21 @@
     </div>
 </template>
 <script>
+const islogin = true
 export default {
     data(){
-        return {}
+        return {
+            name: 'fang111'
+        }
+    },
+    // 局部路由守卫
+    beforeRouteEnter (to, from, next) {
+        // ...
+        if(islogin){
+            next()
+        }else {
+            alert('没有登录')
+        }
     }
 }
 </script>

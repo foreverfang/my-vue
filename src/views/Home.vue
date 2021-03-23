@@ -10,6 +10,7 @@
       <h2 slot="mySlot">EnhancedComponent slot</h2>
       <p>default slot</p>
     </enhanced-com>
+    <h1>hello 我是传过来的{{name}}</h1>
   </div>
 </template>
 
@@ -21,6 +22,11 @@ const EnhancedCom = highComponent(BaseComponent)
 
 export default {
   name: 'Home',
+  props: {
+    name: {
+        type: String
+    }
+  },
   components: {
     HelloWorld: ()=>import('@/components/HelloWorld.vue'),
     EnhancedCom,

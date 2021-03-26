@@ -3,11 +3,19 @@
         <div class="box">
             hello fang
         </div>
+        <ScopeSlot>
+            <template v-slot:default="scope">
+                {{scope.user.name}}
+            </template>
+        </ScopeSlot>
     </div>
 </template>
 <script>
 const islogin = true
 export default {
+    components: {
+        ScopeSlot: ()=>import('../components/scopeSlot')
+    },
     data(){
         return {
             name: 'fang111'

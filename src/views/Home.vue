@@ -11,6 +11,8 @@
       <p>default slot</p>
     </enhanced-com>
     <h1>hello 我是传过来的{{name}}</h1>
+    <hr>
+    <span>{{$store.state.name}}</span>
   </div>
 </template>
 

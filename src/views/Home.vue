@@ -12,7 +12,9 @@
     </enhanced-com>
     <h1>hello 我是传过来的{{name}}</h1>
     <hr>
-    <span>{{$store.state.name}}</span>
+    <span>{{$store.state.count}}</span>
+    <button @click="handleBtnClick">让count加1</button>
+    <h2>m1模块下的{{$store.state.m1.myName}}</h2>
   </div>
 </template>
 
@@ -21,6 +23,8 @@
 import BaseComponent from '@/components/baseComponent.vue'
 import highComponent from "@/components/highComponent.js"
 const EnhancedCom = highComponent(BaseComponent)
+
+import { mapMutations, mapActions } from 'vuex'
 
 export default {
   name: 'Home',
@@ -35,8 +39,17 @@ export default {
     BaseComponent
   },
   methods: {
+      ...mapMutations('m1', ['getNameMutation']),
+      ...mapActions(["getCountAction"]),
       handleMyClick(val){
           console.log('点个寂寞', val)
+      },
+      handleBtnClick(){
+          console.log("store", this.$store)
+        //   this.$store.dispatch('getCountAction')
+        //   this.$store.dispatch('m1/getNameMutation')
+        this.getCountAction()
+        this.getNameMutation()
       }
   }
 }
